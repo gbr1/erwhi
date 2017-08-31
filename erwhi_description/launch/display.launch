@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!-- Standalone launcher to visualize the robot model. -->
+  <include file="$(find erwhi_description)/launch/description.launch"/>
+
+  <!-- Run an emulator of /joint_states and control all joints from a window -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" output="screen">
+    <param name="use_gui" value="true" />
+  </node>
+  
+  <!-- Run the RVIZ visualizer -->
+  <node name="rviz" pkg="rviz" type="rviz"  args="-d $(find erwhi_description)/rviz/urdf.rviz" output="screen" />
+</launch>

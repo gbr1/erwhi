@@ -1,0 +1,38 @@
+# This configuration works with the uNav board and uBridge
+# Two motors with an encoder with 300CPR and 30 of gear ratio
+
+joint: [ 'left_joint' , 'right_joint' ]
+
+left_joint:
+  number: 0
+  bridge: {PWM_dead_zone: 0.0, PWM_frequency: 1, h_bridge_enable: 0,
+      current_offset: 0.0, current_gain: 1.0, 
+      volt_gain: 0.0, volt_offset: inf}
+  diagnostic:
+    current: {warning: 1.0, critical: 2.0, timeout: 1000, autorestore: 500}
+    temperature: {critical: 50.0, warning: 30.0, timeout: 1000, autorestore: 500}
+  emergency: {Bridge_off: 2.0, Slope_time: 1.0, Timeout: 500}
+  encoder: {CPR: 360, channels: 2, position: 1, z_index: 0}
+  limits: {position: 6.28, velocity: 15.0, current: 5.0, effort: 20.0, PWM: 100.0}
+  pid:
+    current: {Enable: false, Frequency: 32000, Kp: 5.0, Ki: 0.001, Kd: 2.0, Kaw: 0.005}
+    velocity: {Enable: true, Frequency: 1000, Kp: 8, Ki: 0.8, Kd: 0.0, Kaw: 0.05}
+  ratio: 986.41
+  rotation: 1
+
+right_joint:
+  number: 1
+  bridge: {PWM_dead_zone: 0.0, PWM_frequency: 1, h_bridge_enable: 0,
+      current_offset: 0.0, current_gain: 1.0, 
+      volt_gain: 0.0, volt_offset: inf}
+  diagnostic:
+    current: {warning: 1.0, critical: 2.0, timeout: 1000, autorestore: 500}
+    temperature: {critical: 50.0, warning: 30.0, timeout: 1000, autorestore: 500}
+  emergency: {Bridge_off: 2.0, Slope_time: 1.0, Timeout: 500}
+  encoder: {CPR: 360, channels: 2, position: 1, z_index: 0}
+  limits: {position: 6.28, velocity: 15.0, current: 5.0, effort: 20.0, PWM: 100.0}
+  pid:
+    current: {Enable: false, Frequency: 32000, Kp: 5.0, Ki: 0.001, Kd: 2.0, Kaw: 0.005}
+    velocity: {Enable: true, Frequency: 1000, Kp: 8, Ki: 0.8, Kd: 0.0, Kaw: 0.05}
+  ratio: 986.41
+  rotation: -1

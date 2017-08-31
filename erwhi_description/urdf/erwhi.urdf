@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+
+<robot name="erwhi">
+	<!-- Base link position -->
+	<link name="base_link">
+		<visual>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.06" />
+			<geometry>
+				<cylinder length="0.1" radius="0.1" />
+			</geometry>
+			<material name="green">
+				<color rgba="0 1 0 0.5"/>
+			</material>
+		</visual>
+	</link>
+	<!-- Left wheel link -->
+	<link name="left_wheel">
+		<visual>
+			<geometry>
+				<cylinder length="0.01" radius="0.0730250"/>
+			</geometry>
+			<material name="black">
+				<color rgba="0 0 0 1"/>
+			</material>
+		</visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.01" radius="0.0730250"/>
+      </geometry>
+    </collision>
+	</link>
+	<!-- Joint configuration left joint -->
+	<joint name="left_joint" type="continuous">
+		<axis xyz="0 0 -1"/>
+		<parent link="base_link"/>
+		<child link="left_wheel"/>
+		<origin rpy="1.57075 0.0 0.0" xyz="0 0.07 0.05"/>
+		<limit effort="2" velocity="10"/>
+		<joint_properties damping="0.02" friction="0.04"/>
+	</joint>
+	<!-- Transmission configuration left joint -->
+	<transmission name="$left_trans" type="SimpleTransmission">
+		<type>transmission_interface/SimpleTransmission</type>
+		<actuator name="$left_motor">
+			<mechanicalReduction>1</mechanicalReduction>
+		</actuator>
+		<joint name="left_joint">
+			<hardwareInterface>VelocityJointInterface</hardwareInterface>
+		</joint>
+	</transmission>
+
+	<!-- Right wheel link -->
+	<link name="right_wheel">
+		<visual>
+			<geometry>
+				<cylinder length="0.01" radius="0.0730250"/>
+			</geometry>
+			<material name="black">
+				<color rgba="0 0 0 1"/>
+			</material>
+		</visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.01" radius="0.0730250"/>
+      </geometry>
+    </collision>
+	</link>
+	<!-- Joint configuration left joint -->
+	<joint name="right_joint" type="continuous">
+		<axis xyz="0 0 -1"/>
+		<parent link="base_link"/>
+		<child link="right_wheel"/>
+		<origin rpy="1.57075 0.0 0.0" xyz="0 -0.07 0.05"/>
+		<limit effort="2" velocity="10"/>
+		<joint_properties damping="0.02" friction="0.04"/>
+	</joint>
+	<!-- Transmission configuration right joint -->
+	<transmission name="$right_trans" type="SimpleTransmission">
+		<type>transmission_interface/SimpleTransmission</type>
+		<actuator name="$right_motor">
+			<mechanicalReduction>1</mechanicalReduction>
+		</actuator>
+		<joint name="right_joint">
+			<hardwareInterface>VelocityJointInterface</hardwareInterface>
+		</joint>
+	</transmission>
+	
+</robot>

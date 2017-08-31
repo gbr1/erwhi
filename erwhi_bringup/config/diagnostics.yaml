@@ -1,0 +1,7 @@
+analyzers:
+  computers:
+    type: GenericAnalyzer
+    path: unav
+    contains: [
+      'joint',
+      'board']

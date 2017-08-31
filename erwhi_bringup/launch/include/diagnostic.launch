@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>    
+
+	<!-- Diagnostic Aggregator -->
+    	<node pkg="diagnostic_aggregator" type="aggregator_node" name="diagnostic_aggregator">
+        	<rosparam command="load" file="$(find erwhi_bringup)/config/diagnostics.yaml"/>
+    	</node>
+</launch>

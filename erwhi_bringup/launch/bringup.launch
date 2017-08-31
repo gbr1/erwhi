@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<launch>
+	<!-- motors control uNAV-->
+	<include file="$(find erwhi_bringup)/launch/include/driver.launch">
+	</include>
+
+	<!-- control -->
+	<include file="$(find erwhi_control)/launch/control.launch">
+	</include>
+
+	<!-- diagnostic -->
+	<include file="$(find erwhi_bringup)/launch/include/diagnostic.launch">
+	</include>
+	
+</launch>

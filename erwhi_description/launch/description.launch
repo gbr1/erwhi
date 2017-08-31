@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- Load the urdf with all information about your robot.
+  To work with unav_node is required to add in your URDF the transmission tag.
+  READ inside for other information. -->
+  <param name="robot_description" textfile="$(find erwhi_description)/urdf/erwhi.urdf" />
+  
+  <!-- Activate node to propagate the joint state -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+</launch>
