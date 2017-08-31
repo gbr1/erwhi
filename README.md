@@ -1,2 +1,0 @@
-# erwhi
-ERWHI robot repository
