@@ -4,7 +4,7 @@
 joint: [ 'left_joint' , 'right_joint' ]
 
 left_joint:
-  number: 0
+  number: 1
   bridge: {PWM_dead_zone: 0.0, PWM_frequency: 1, h_bridge_enable: 0,
       current_offset: 0.0, current_gain: 1.0, 
       volt_gain: 0.0, volt_offset: inf}
@@ -21,7 +21,7 @@ left_joint:
   rotation: 1
 
 right_joint:
-  number: 1
+  number: 0
   bridge: {PWM_dead_zone: 0.0, PWM_frequency: 1, h_bridge_enable: 0,
       current_offset: 0.0, current_gain: 1.0, 
       volt_gain: 0.0, volt_offset: inf}
