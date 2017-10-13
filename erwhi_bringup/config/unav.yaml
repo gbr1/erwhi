@@ -16,7 +16,7 @@ left_joint:
   limits: {position: 6.28, velocity: 15.0, current: 5.0, effort: 20.0, PWM: 100.0}
   pid:
     current: {Enable: false, Frequency: 32000, Kp: 5.0, Ki: 0.001, Kd: 2.0, Kaw: 0.005}
-    velocity: {Enable: true, Frequency: 1000, Kp: 8, Ki: 0.8, Kd: 0.0, Kaw: 0.05}
+    velocity: {Enable: true, Frequency: 1000, Kp: 23.0, Ki: 12.0, Kd: 1.0, Kaw: 0.3}
   ratio: 986.41
   rotation: 1
 
@@ -33,6 +33,6 @@ right_joint:
   limits: {position: 6.28, velocity: 15.0, current: 5.0, effort: 20.0, PWM: 100.0}
   pid:
     current: {Enable: false, Frequency: 32000, Kp: 5.0, Ki: 0.001, Kd: 2.0, Kaw: 0.005}
-    velocity: {Enable: true, Frequency: 1000, Kp: 8, Ki: 0.8, Kd: 0.0, Kaw: 0.05}
+    velocity: {Enable: true, Frequency: 1000, Kp: 23.0, Ki: 12.0, Kd: 1.0, Kaw: 0.3}
   ratio: 986.41
-  rotation: -1
+  rotation: 1
