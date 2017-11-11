@@ -9,6 +9,14 @@
 	<include file="$(find erwhi_control)/launch/control.launch">
 	</include>
 
+	<!-- realsense 
+	<include file="$(find erwhi_bringup)/launch/include/r200.launch">
+	</include> -->
+
+	<!-- imu -->
+	<include file="$(find erwhi_bringup)/launch/include/imu.launch">
+	</include>
+
 	<!-- diagnostic -->
 	<include file="$(find erwhi_bringup)/launch/include/diagnostic.launch">
 	</include>

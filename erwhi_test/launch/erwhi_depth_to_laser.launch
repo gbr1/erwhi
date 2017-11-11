@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<launch>
+	<node name="depthimage_to_laserscan" type="depthimage_to_laserscan" pkg="depthimage_to_laserscan">
+		<remap from="image" to="/camera/depth/image_raw" />
+		<remap from="camera_info" to="/camera/depth/camera_info" />
+		<remap from="scan" to="/camera/scan" />
+	</node>
+
+</launch>
