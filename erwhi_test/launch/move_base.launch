@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- move_base -->
+	
+	<node pkg="move_base" type="move_base" respawn="false" name="gmapping" output="screen">
+	</node>
+</launch>

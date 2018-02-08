@@ -9,12 +9,18 @@
 	<include file="$(find erwhi_control)/launch/control.launch">
 	</include>
 
-	<!-- realsense 
-	<include file="$(find erwhi_bringup)/launch/include/r200.launch">
-	</include> -->
+	<!-- realsense --> 
+	<!--<include file="$(find erwhi_bringup)/launch/include/r200.launch">
+	</include>-->
+
+	<!-- lidar -->
+	<include file="$(find erwhi_bringup)/../../rplidar_ros/launch/rplidar.launch">
+	</include>
 
 	<!-- imu -->
-	<include file="$(find erwhi_bringup)/launch/include/imu.launch">
+<!--	<include file="$(find erwhi_bringup)/launch/include/imu.launch">
+	</include> -->
+	<include file="$(find erwhi_bringup)/launch/include/fake_odom.launch">
 	</include>
 
 	<!-- diagnostic -->

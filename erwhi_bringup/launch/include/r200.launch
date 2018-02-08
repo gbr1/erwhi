@@ -2,14 +2,14 @@
 
 <launch>
 	<!-- start realsense -->
-	<include file="$(find erwhi_bringup)/../../realsense/camera/launch/realsense_r200_rgbd.launch">
+	<include file="$(find erwhi_bringup)/../../realsense/realsense_camera/launch/r200_nodelet_modify_params.launch">
 	</include>
 
 	<!-- laser scan -->
 	<node name="depthimage_to_laserscan" type="depthimage_to_laserscan" pkg="depthimage_to_laserscan">
 		<remap from="image" to="/camera/depth/image_raw" />
 		<remap from="camera_info" to="/camera/depth/camera_info" />
-		<remap from="scan" to="/camera/scan" />
+		<!--<remap from="scan" to="/camera/scan" />-->
 	</node>
 
 	
